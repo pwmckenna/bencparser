@@ -5,13 +5,17 @@
 <link href="stylesheets/prettify.css" rel="stylesheet">
 
 <div class="container" style="text-align:center;">
-	<a id="example1" class="btn">Example Bencoding 1</a>
-	<a id="example2" class="btn">Example Bencoding 2</a>
+	<a id="example1" class="btn">Load Example Bencoding 1</a>
+	<a id="example2" class="btn">Load Example Bencoding 2</a>
+	<br>
 	<br>
 	<textarea id="hex" rows="12" class="span12"></textarea>
 	<br>
+	<br>
 	<a id="check" class="btn">Check</a>
-	<div id="json"></div>
+	<br>
+	<br>
+	<div id="json" style="text-align:left;"></div>
 </div>
 
 <script>
@@ -110,7 +114,7 @@ jQuery(function() {
 		var hex = $('#hex').text();
 		var json = parse(hex.split(' '));
 		$('#json').empty();
-		$('#json').append('<pre class="prettyprint linenums languague-json">' + JSON.stringify(json) + '</pre>');
+		$('#json').append('<pre class="prettyprint languague-json">' + JSON.stringify(json, null, 4) + '</pre>');
 		prettyPrint();
 	});
 });
